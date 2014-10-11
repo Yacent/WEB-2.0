@@ -121,14 +121,14 @@ html {
 	font-family: Arial sans-serif;
 	transition: all .4s ease-out;
 	-webkit-transition: all .4s ease-out;
-	--moz-transition: all .4s ease-out;
+	-moz-transition: all .4s ease-out;
 }
 .button:hover {
 	background-color: #fff;
 	color: #444;
 	transition: all .4s ease-out;
 	-webkit-transition: all .4s ease-out;
-	--moz-transition: all .4s ease-out;
+	-moz-transition: all .4s ease-out;
 }
 .button:hover a{
 	color: #444;
