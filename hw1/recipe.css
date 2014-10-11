@@ -101,7 +101,7 @@ html {
 #index hr {
 	width: 400px;
 }
-button {
+.button {
 	display: block;
 	margin: 0 auto;
 	cursor: pointer;
@@ -111,8 +111,26 @@ button {
 	border: 2px #fff solid;
 	font-family: sans-serif;
 }
-button:hover {
+.button a {
+	display: block;
+	text-align: center;
+	height: 50px;
+	width: 180px;
+	line-height: 50px;
+	color: #fff;
+	font-family: Arial sans-serif;
+	transition: all .4s ease-out;
+	-webkit-transition: all .4s ease-out;
+	--moz-transition: all .4s ease-out;
+}
+.button:hover {
 	background-color: #fff;
+	color: #444;
+	transition: all .4s ease-out;
+	-webkit-transition: all .4s ease-out;
+	--moz-transition: all .4s ease-out;
+}
+.button:hover a{
 	color: #444;
 }
 .info {
