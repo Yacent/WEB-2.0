@@ -1,0 +1,128 @@
+* {
+	font-family: Times, serif;
+	font-size: 11pt;
+}
+body {
+	background-image: url(http://yujielee.qiniudn.com/silverware.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+h1 {
+	background: #f0f0f0;
+	font-family: 'Century Gothic', Futura, Verdana, sans-serif; 
+	font-size: 22pt;
+	text-align: center;
+	text-decoration: underline;
+	color: #a4a400;
+	letter-spacing: 0.2em;
+}
+h2 {
+	background: #f0f0f0;
+	font-family: 'Century Gothic', Futura, Verdana, sans-serif; 
+	font-size: 18pt;
+	text-align: left;
+	font-weight: normal;
+	text-decoration: underline;
+	color: #a4a400;
+}
+blockquote {
+	background: #FFFFC8;
+	color: #000;
+	font-style: italic;
+}
+a {
+	color: #a4a400;
+}
+
+ul li {
+	list-style-image: url(http://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/pie_icon.gif);
+	list-style-position: outside;
+}
+html {
+	height: 100%;
+}
+* {
+	text-decoration: none;
+	letter-spacing: normal;
+	background: transparent;
+}
+#index {
+	display: block;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background-image: none;
+	background-color: black;
+}
+
+.wrap {
+	position: fixed;
+	z-index: -5;
+	width: 100%;
+	height: 100%;
+	background-image: url(http://yujielee.qiniudn.com/background.jpg);
+	background-size: cover;
+	opacity: .6;
+}
+.content {
+	padding-top:100px;
+	position: relative;
+	z-index: 5;
+	width: 650px;
+	margin: 0 auto;
+}
+
+.content h1 {
+	margin: 0;
+	text-decoration: none;
+	background: transparent;
+	font-size: 48px;
+	font-family: Arial;
+	font-weight: bold;
+	color: #fff;
+	letter-spacing: 0;
+}
+.Logo {
+	width: 200px;
+	height: 200px;
+	background-image: url(http://yujielee.qiniudn.com/logo.png);
+	background-size: 240px;
+	background-position: center;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.content p {
+	line-height: 1.4;
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+#index hr {
+	width: 400px;
+}
+button {
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+	width: 180px;
+	height: 50px;
+	color: #fff;
+	border: 2px #fff solid;
+	font-family: sans-serif;
+}
+button:hover {
+	background-color: #fff;
+	color: #444;
+}
+.info {
+	position: absolute;
+	z-index: 5;
+	right: 10px;
+	top: 10px;
+}
+.info a {
+	color: #fff;
+	text-decoration: none;
+	font-family: sans-serif;
+}
