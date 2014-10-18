@@ -47,17 +47,8 @@ section:first-child { margin-top: 0;}
 section span {
 	cursor: pointer;
 	border-bottom: 2px dashed #009097;
-	transition         : all .3s ease-out;
-	-webkit-transition : all .3s ease-out;
-	-moz-transition    : all .3s ease-out;
 }
-section span:hover {
-	color: green;
-	border-bottom: 2px dashed green;
-	transition         : all .3s ease-out;
-	-webkit-transition : all .3s ease-out;
-	-moz-transition    : all .3s ease-out;
-}
+
 
 .widget {
 	padding-left: 12px;
@@ -65,19 +56,11 @@ section span:hover {
 	border: 4px #009097 solid;
 }
 
+.wrapper * *:hover {
+	color: yellow;
+}
 footer { clear: both;}
-a>img {
-	opacity: .5;
-	transition         : all .3s ease-out;
-	-webkit-transition : all .3s ease-out;
-	-moz-transition    : all .3s ease-out;
-}
-a>img:hover {
-	opacity: 1;
-	transition         : all .3s ease-out;
-	-webkit-transition : all .3s ease-out;
-	-moz-transition    : all .3s ease-out;
-}
+
 
 @media screen and (max-width: 600px) {
     article, aside {
