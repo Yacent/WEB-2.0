@@ -2,9 +2,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Yick's Web Hw</title>
+    <title>Yick's Web Works</title>
     <style>
         * { font-family: "Helvetica Thin", "Microsoft JhengHei", "微软雅黑", sans-serif;}
+        a {
+            text-decoration:none;
+        }
         html, body {
             margin: 0;
             padding: 0;
@@ -15,14 +18,21 @@
             background-color: #eee;
         }
         header {
-            margin: 70px 0 50px 0;
+            margin: 10% 0 10% 0;
             text-align: center;
         }
         header h1 {
             margin: 0;
+            margin-bottom: 8px;
+            color: rgb(80, 80, 80);
         }
         header a {
-            color: rgb(100, 100, 100);
+            border-radius: 6px;
+            margin: 0 auto;
+            width: 100px;
+            display: block;
+            color: #fff;
+            background-color: rgb(200, 200, 200);
         }
         header a:hover {
             color: #0099CC;
@@ -36,6 +46,7 @@
             border-radius: 5px;
             box-shadow: 0 1px 1px 1px #dbdbdb;
             overflow: hidden;
+            margin-bottom: 30px;
         }
         .card ul {
             padding: 0;
@@ -69,6 +80,13 @@
             font-size: 14px;
             color: rgb(150, 150, 150);
         }
+        .title {
+            padding-left: 30px;
+            color: rgb(190, 190, 190);
+            letter-spacing: .5em;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
         .item {
             margin: 10px 10px 10px 30px;
         }
@@ -81,15 +99,27 @@
         footer {
             padding-top: 10px;
             text-align: center;
+            color: rgb(180, 180, 180);
+        }
+        footer p {
+            margin: 0;
+        }
+        @media screen and (max-width: 600px) {
+            .main {
+                width: 95%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="main">
         <header>
-            <h1>Yick's Web2.0 Hw</h1>
+            <h1>Yick's Web2.0 Works</h1>
             <a href="http://yujielee.com">yujielee.com</a>
         </header>
+        <h2 class="title">
+            COURSE
+        </h2>
         <div class="card">
             <ul>
                 <li>
@@ -110,6 +140,11 @@
                         <p>CSS 盒子模型、响应式布局以及块级格式上下文</p>
                     </div>
                 </li>
+            </ul>
+        </div>
+        <h2 class="title">PRACTICE</h2>
+        <div class="card">
+            <ul>
                 <li>
                     <div class="item">
                         <a href="circlemenu/index.html">Circle Menu</a>
