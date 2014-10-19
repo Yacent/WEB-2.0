@@ -1,0 +1,118 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+body {
+    background: rgb(244, 255, 244);
+}
+.desciption {
+    width: 500px;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    color: rgb(98, 96, 90);
+    font-size: 18px;
+    font-weight: 100;
+    font-family: "Microsoft JhengHei", "微软雅黑";
+    line-height: 1.5;
+}
+.container {
+    position: fixed;
+    top: 300px;
+    left: 300px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+.cont {
+    position: absolute;
+}
+.round {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    background: #404040;
+    color: #fff;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 19px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .3s;
+}
+.fa {
+    margin-top: 7px;
+    transition: all .5s;
+}
+.apple {
+    opacity: 1;
+    position:absolute;
+    z-index: 10;
+}
+.container:hover {
+    top: 250px;
+    left: 250px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+}
+.container:hover .apple {
+    top: -7px;
+    left: -7px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    transition: all .5s;
+}
+.container:hover .apple .fa {
+    margin-top: 13px;
+    font-size: larger;
+    transition: all .5s;
+}
+.container:hover .cont {
+    top: 50px;
+    left: 50px;
+    opacity: 1;
+    transition: all .5s;
+}
+.container:hover .envelope {
+    left: -60px;
+    opacity: 1;
+    transition: all .5s;
+}
+.container:hover .chart {
+    left: -45px;
+    top: 45px;
+    opacity: 1;
+    transition: all .5s;
+}
+.container:hover .scissors {
+    top: 60px;
+    opacity: 1;
+    transition: all .5s;
+}
+.container:hover .crop {
+    left: -45px;
+    top: -45px;
+    opacity: 1;
+    transition: all .5s;
+}
+.container:hover .comments {
+    top: -60px;
+    opacity: 1;
+    transition: all .5s;
+}
+.container:hover .line {
+    left: 45px;
+    top: 45px;
+    opacity: 1;
+    transition: all .5s;
+}
+.round:hover {
+    background: #339999;
+    transition: all .5s;
+}
