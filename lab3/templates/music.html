@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Music Viewer</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<link href="http://www.cs.washington.edu/education/courses/cse190m/09sp/labs/3-music/viewer.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="header">
+
+			<h1>190M Music Playlist Viewer</h1>
+			<h2>Search Through Your Playlists and Music</h2>
+		</div>
+		
+		
+		<div id="listarea">
+			<ul id="musiclist">
+				{% for i in l %}
+				<li class="mp3item">
+					<a href="{{i ['src'] }}">{{ i["name"] }}</a>
+					({{ i["size"] }})
+				</li>
+				<!--
+				<li class="mp3item">
+					<a href="songs/Drift Away.mp3">Drift Away.mp3</a>
+					
+				</li>
+
+				<li class="mp3item">
+					<a href="songs/Hello.mp3">Hello.mp3</a>
+
+					(1871110 b)
+				</li>
+
+				<li class="mp3item">
+					<a href="songs/Panda Sneeze.mp3">Panda Sneeze.mp3</a>
+					(58 b)
+				</li>-->
+				{% end %}
+				{% if pl %}
+					{% for i in pl %}
+					<li class="playlistitem">
+						<a href="music?playlist={{ i['name'] }}">{{ i['name'] }}</a>
+					</li>
+					{% end %}
+				{% end %}
+			</ul>
+		</div>
+	</body>
+</html>
