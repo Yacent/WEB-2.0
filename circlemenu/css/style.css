@@ -10,7 +10,7 @@ body {
 .desciption {
     width: 500px;
     position: absolute;
-    top: 200px;
+    top: 120px;
     left: 500px;
     color: rgb(98, 96, 90);
     font-size: 18px;
@@ -18,7 +18,7 @@ body {
     font-family: "Microsoft JhengHei", "微软雅黑";
     line-height: 1.5;
 }
-.container {
+#container {
     position: fixed;
     top: 300px;
     left: 300px;
@@ -53,14 +53,17 @@ body {
     position:absolute;
     z-index: 10;
 }
-.container:hover {
-    top: 250px;
-    left: 250px;
+#container:hover {
+    /* Remove the comment character and *
+     * drag.js can also reach the effect*
+     * without drag event.*/
+    /*top: 250px;
+    left: 250px;*/
     width: 150px;
     height: 150px;
     border-radius: 50px;
 }
-.container:hover .apple {
+#container:hover .apple {
     top: -7px;
     left: -7px;
     width: 50px;
@@ -68,45 +71,45 @@ body {
     border-radius: 25px;
     transition: all .5s;
 }
-.container:hover .apple .fa {
+#container:hover .apple .fa {
     margin-top: 13px;
     font-size: larger;
     transition: all .5s;
 }
-.container:hover .cont {
+#container:hover .cont {
     top: 50px;
     left: 50px;
     opacity: 1;
     transition: all .5s;
 }
-.container:hover .envelope {
+#container:hover .envelope {
     left: -60px;
     opacity: 1;
     transition: all .5s;
 }
-.container:hover .chart {
+#container:hover .chart {
     left: -45px;
     top: 45px;
     opacity: 1;
     transition: all .5s;
 }
-.container:hover .scissors {
+#container:hover .scissors {
     top: 60px;
     opacity: 1;
     transition: all .5s;
 }
-.container:hover .crop {
+#container:hover .crop {
     left: -45px;
     top: -45px;
     opacity: 1;
     transition: all .5s;
 }
-.container:hover .comments {
+#container:hover .comments {
     top: -60px;
     opacity: 1;
     transition: all .5s;
 }
-.container:hover .line {
+#container:hover .line {
     left: 45px;
     top: 45px;
     opacity: 1;
@@ -115,4 +118,8 @@ body {
 .round:hover {
     background: #339999;
     transition: all .5s;
+}
+#tar {
+    width:100%;
+    height: 100%;
 }
