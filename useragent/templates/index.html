@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab</title>
+</head>
+<body>
+    <h2>Platform:</h2>
+    <p>{{ ua['platform'] }}</p>
+    {% if ua['platform']=='Mobile' %}
+    <h2>OS:</h2>
+    <p>{{ ua['os'] }}</p>
+    <h2>OS Version:</h2>
+    <p>{{ ua['os_version'] }}</p>
+    <h2>Brand:</h2>
+    <p>{{ ua['brand'] }}</p>
+    {% end %}
+    <hr>
+    <p>{{ us }}</p>
+</body>
+</html>
