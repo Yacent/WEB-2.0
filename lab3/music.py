@@ -7,18 +7,19 @@ import tornado.ioloop
 import tornado.options
 import tornado.web
 
-class Application(tornado.web.Application):
-    '''__init__'''
-    def __init__(self):
-        handlers = [
-            (r"/music", MusicHandler)
-        ]
-        pth = os.path.dirname(__file__)
-        settings = dict(
-            template_path = os.path.join(pth, "templates"),
-            static_path = os.path.join(pth, "static")
-        )
-        tornado.web.Application.__init__(self, handlers, **settings)
+# WTF pylint
+#class Application(tornado.web.Application):
+#    '''__init__'''
+#    def __init__(self):
+#        handlers = [
+#            (r"/music", MusicHandler)
+#        ]
+#        pth = os.path.dirname(__file__)
+#        settings = dict(
+#            template_path=os.path.join(pth, "templates"),
+#            static_path=os.path.join(pth, "static")
+#        )
+#        tornado.web.Application.__init__(self, handlers, settings)
 
 class MusicHandler(tornado.web.RequestHandler):
     '''music handlers'''
@@ -32,28 +33,36 @@ class MusicHandler(tornado.web.RequestHandler):
             src = os.path.join(songspath, fil)
             siz = os.path.getsize(os.path.join(songspath, fil))
             if fil.endswith(".mp3"):
-                lists.append({"name": fil, "src": src,"size" : siz})
+                lists.append({"name": fil, "src": src, "size" : siz})
             if fil.endswith(".txt"):
                 playlists.append({"name": fil, "src": src, "size" : siz})
+            if fil.endswith(".m3u"):
+                playlists.append({"name": fil, "src": src, "size" : siz})
+
 
         listname = self.get_argument('playlist', 'hello')
         shuffle = self.get_argument('shuffle', 'off')
         bysize = self.get_argument('bysize', 'off')
         listss = []
-        
+
         if listname == 'hello':
-            self.render('music.html', l = handlerlist(lists, bysize, shuffle),
-            pl = playlists)
+            self.render('music.html', l=handlerlist(lists, bysize, shuffle),\
+             pl=playlists)
         else:
             listname = self.get_argument('playlist')
-            txt = open(os.path.join(songspath, listname))   
+            txt = open(os.path.join(songspath, listname))
             for line in txt:
                 line = line.rstrip()
-                for i in lists:
-                    if i["name"] == line:
-                        listss.append(i)
-            self.render('music.html', l = handlerlist(listss, bysize, shuffle),
-                pl = [])          
+                if line.startswith("#"):
+                    pass
+                else:
+                    for i in lists:
+                        if i["name"] == line:
+                            listss.append(i)
+            self.render('music.html', l=handlerlist(listss, bysize, shuffle),
+                        pl=[])
+    def data_received(self, chunk):
+        pass
 
 def transform(size):
     '''transform format of size'''
@@ -68,10 +77,10 @@ def transform(size):
         size = round(size/1024/1024, 2)
         return str(size)+' mb'
 
-def handlerlist(lists, bysize = 'off', shuffle = 'off'):
+def handlerlist(lists, bysize='off', shuffle='off'):
     '''to sort'''
     if bysize == 'on':
-        lists.sort(key = lambda x:x['size'], reverse=True)
+        lists.sort(key=lambda x: x['size'], reverse=True)
     if shuffle == 'on':
         random.shuffle(lists)
     for i in lists:
@@ -81,7 +90,13 @@ def handlerlist(lists, bysize = 'off', shuffle = 'off'):
 def main():
     '''main'''
     tornado.options.parse_command_line()
-    http_server = tornado.httpserver.HTTPServer(Application())
+    pth = os.path.dirname(__file__)
+    app = tornado.web.Application(
+        handlers=[(r"/music", MusicHandler)],
+        template_path=os.path.join(pth, "templates"),
+        static_path=os.path.join(pth, "static")
+    )
+    http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(8888)
     tornado.ioloop.IOLoop.instance().start()
 
