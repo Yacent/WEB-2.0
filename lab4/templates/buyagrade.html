@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Buy Your Way to a Better Education!</title>
+	<link rel="stylesheet" href="{{ static_url("style.css") }}" />
+</head>
+<body>
+	<div class="all">
+		<h1>Buy Your Way to a Better Education!</h1>
+		<p>The rough economy, along with recent changes in Sun Yat-sen University policy, now allow us to offer grades for money.  That's right!  All you need to get a 4.0 in this course is cold, hard, cash.</p>
+		<hr/>
+		<h2>Give Us Your Money</h2>
+		<form action="/form" method="post">
+			<div class="row">
+				name: <input type="text" name="name"/>
+			</div>
+			<div class="row">
+				section: 
+				<select name="section">
+					<option value="default">&lt; Select a section &gt;</option>
+					<option value="val1">val1</option>
+					<option value="val2">val2</option>
+					<option value="val3">val3</option>
+					<option value="val4">val4</option>
+				</select>
+			</div>
+			<div class="row">
+				credit card: <input type="text" name="card"/>
+			</div>
+			<div class="row">
+				<input type="radio" name="card_type" value="visa"/> Visa
+				<input type="radio" name="card_type" value="mastercard"/> MasterCard
+			</div>
+			<button>I AM A GIANT SUCKER</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    background-color: #eee;
+}
+.all {
+    background-color: #fff;
+    width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+}
+h1 {
+    font-size: 40px;
+    line-height: 1;
+}
+p {
+    margin: 20px 0;
+}
+h2 {
+    text-align: center;
+}
+.row {
+    margin: 10px 0;
+}
+input,select {
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px #ccc solid;
+    outline: none;
+    font-size: 14px;
+    padding: 4px;
+}
+
+input:focus, select:focus{
+    border: 1px #00c4cc solid;
+    box-shadow: 0 0 2px #00c4cc;
+}

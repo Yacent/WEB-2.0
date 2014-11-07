@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Buy Your Way to a Better Education!</title>
+    <link rel="stylesheet" href="{{ static_url("style.css") }}" />
+</head>
+<body>
+    <div class="all">
+        <h1>Buy Your Way to a Better Education!</h1>
+        <p>The rough economy, along with recent changes in Sun Yat-sen University policy, now allow us to offer grades for money.  That's right!  All you need to get a 4.0 in this course is cold, hard, cash.</p>
+        <hr/>
+        <h2>Give Us Your Money</h2>
+        <div class="form">
+            <div class="row">
+                name: {{ n }}
+            </div>
+            <div class="row">
+                section: {{ s }}
+            </div>
+            <div class="row">
+                credit card: {{ c }}
+            </div>
+            <div class="row">
+                card type: {{ ct }}
+            </div>
+        </div>
+        <h3>Here are all the suckers who have submitted here:</h3>
+        <pre>{{ txt }}</pre>
+    </div>
+</body>
+</html>
