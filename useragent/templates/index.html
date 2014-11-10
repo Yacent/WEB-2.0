@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab</title>
+    <link rel="stylesheet" href='{{static_url("style.css")}}'>
 </head>
 <body>
+    <h3>Tornado 实现</h3>
     <h2>Platform:</h2>
     <p>{{ ua['platform'] }}</p>
     {% if ua['platform']=='Mobile' %}
@@ -17,5 +19,6 @@
     {% end %}
     <hr>
     <p>{{ us }}</p>
+    <hr>
 </body>
 </html>
