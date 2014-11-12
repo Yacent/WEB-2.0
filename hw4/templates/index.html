@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+			{% block body %}
+			Returning User:
+			<form method="get">
+				Name:
+				<input type="text" name="old_name">
+				<button>View My Matches</button>
+			</form>
+			New User Signup:
+			<form enctype="multipart/form-data" method="post">
+				<div>
+					<strong>Name:</strong>
+					<input type="text" name="name">
+				</div>
+				
+				<div>
+					<strong>Gender:</strong>
+					<input type="radio" name="gender" value="M"> Male
+					<input type="radio" name="gender" value="F"> Female
+				</div>
+				
+				<div>
+					<strong>Age:</strong>
+					<input type="text" name="age">
+				</div>
+				
+				<div>
+					<strong>Personality type:</strong>
+					<input type="text" name="ptype">
+					(<a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">Don't know your type?</a>)
+				</div>
+				
+				<div>
+					<strong>Favorite OS:</strong>
+					<select name="os">
+						<option value="Windows">Windows</option>
+						<option value="Mac OS X">Mac OS X</option>
+						<option value="Linux">Linux</option>
+						<option value="other">other</option>
+					</select>
+				</div>
+				
+				
+				<div id="seeking">
+					<strong>Seeking:</strong>
+					<input type="checkbox" name="sex" value="M">Male
+					<input type="checkbox" name="sex" value="F">Female
+				</div>
+				
+				<div>
+					<strong>Between ages:</strong>
+					<input type="text" name="age_start"> and
+					<input type="text" name="age_end">
+				</div>
+				<div>
+					<input type="file" name="image">
+				</div>
+				<button>
+					Sign Up
+				</button>
+			</form>
+		</div>
+		{% end %}
+		<!--
+		<p>
+			Results and page (C) Copyright 2009 NerdLuv Inc.
+		</p>
+
+		<div id="w3c">
+			<a href="http://validator.w3.org/check/referer">
+				<img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" /></a>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer">
+				<img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS" /></a>
+		</div>
+	</body>
+</html>
+-->
+	

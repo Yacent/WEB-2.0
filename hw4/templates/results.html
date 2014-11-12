@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+		{% block body %}
+			<div id="matches">
+				<h1>Matches for Marty Stepp</h1>
+				{% for person in persons %}
+				<div class="match">
+					<p class="name">
+						<img src="{{ person.image }}" alt="{{ person.name }}" />
+						{{ person.name }} 
+					</p>
+
+					<p class="info">
+						<strong>gender:</strong>  {{ person.gender }} <br />
+						<strong>age:</strong>     {{ person.age }} <br />
+						<strong>type:</strong>    {{ person.type }} <br />
+						<strong>OS:</strong>      {{ person.os }} <br />
+						<strong>rating:</strong>  {{ person.rating }}
+					</p>
+				</div>
+				{% end %}
+			</div>
+		</div>
+		{% end %}
+		<!--
+		<p>
+			Results and page (C) Copyright 2009 NerdLuv Inc.
+		</p>
+
+		<div id="w3c">
+			<a href="http://validator.w3.org/check/referer">
+				<img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" /></a>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer">
+				<img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS" /></a>
+		</div>
+	</body>
+</html>-->

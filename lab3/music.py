@@ -7,20 +7,6 @@ import tornado.ioloop
 import tornado.options
 import tornado.web
 
-# WTF pylint
-#class Application(tornado.web.Application):
-#    '''__init__'''
-#    def __init__(self):
-#        handlers = [
-#            (r"/music", MusicHandler)
-#        ]
-#        pth = os.path.dirname(__file__)
-#        settings = dict(
-#            template_path=os.path.join(pth, "templates"),
-#            static_path=os.path.join(pth, "static")
-#        )
-#        tornado.web.Application.__init__(self, handlers, settings)
-
 class MusicHandler(tornado.web.RequestHandler):
     '''music handlers'''
     def get(self):
@@ -102,4 +88,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
