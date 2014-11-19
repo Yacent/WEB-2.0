@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 		{% block body %}
 			<div id="matches">
-				<h1>Matches for Marty Stepp</h1>
+				<h1>Matches for {{ ori_name}}</h1>
 				{% for person in persons %}
 				<div class="match">
 					<p class="name">
@@ -13,7 +13,7 @@
 						<strong>gender:</strong>  {{ person.gender }} <br />
 						<strong>age:</strong>     {{ person.age }} <br />
 						<strong>type:</strong>    {{ person.type }} <br />
-						<strong>OS:</strong>      {{ person.os }} <br />
+						<strong>OS:</strong>      {{ person.fav_os }} <br />
 						<strong>rating:</strong>  {{ person.rating }}
 					</p>
 				</div>
