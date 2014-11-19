@@ -45,7 +45,7 @@ class MovieHandler(tornado.web.RequestHandler):
                 line = line.rstrip()
                 temp = line.split(':')
                 gen_review[temp[0]] = temp[1]
-
+            review_a = 0
             for fil in os.listdir(movie_detail_path):
                 res = re.match(r'^review(\d*)\.txt$', fil)
                 if res:
@@ -63,9 +63,9 @@ class MovieHandler(tornado.web.RequestHandler):
                         else:
                             comment['info'] = str
                     comments.append(comment)
-                    comments_acc = int(res.group(1))
+                    review_a += 1
             self.render('skeleton.html', comments=comments, \
-                comments_acc=comments_acc, movie=movie, gen_review=gen_review)
+                comments_acc=review_a, movie=movie, gen_review=gen_review)
         else:
             self.render('404.html')
 

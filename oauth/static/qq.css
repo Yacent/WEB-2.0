@@ -1,0 +1,11 @@
+html, body {
+    background:#efefef;
+    padding:40px;
+}
+.info {
+    padding: 10px;
+    width:120px;
+    background:#fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px #bbb;
+}
