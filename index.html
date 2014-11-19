@@ -18,7 +18,7 @@
             background-color: #eee;
         }
         header {
-            margin: 10% 0 10% 0;
+            margin: 10% 0 5% 0;
             text-align: center;
         }
         header h1 {
@@ -37,43 +37,63 @@
         header a:hover {
             color: #0099CC;
         }
+        h3 {
+            margin: 0;
+        }
         .main {
             width: 600px;
             margin: 0 auto;
         }
         .card {
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 1px 1px 1px #dbdbdb;
             overflow: hidden;
             margin-bottom: 30px;
         }
         .card ul {
             padding: 0;
+            margin: 0;
+            -webkit-margin-before: 0;
         }
         .card li {
             display: block;
             list-style: none;
-            border-bottom: 1px rgb(235, 235, 235) solid;
         }
         .card li:last-child {
             border: none;
         }
 
-        .card li a {
+        .card li h3 {
             font-size: 22px;
             font-weight: bold;
             color: rgb(100, 100, 100);
             text-decoration: none;
+        }
+        .card li a {
+            display: block;
+            width: 100%;
+            height: 70px;
+            background: #fff;
             transition: all .3s;
             -webkit-transition: all .3s;
-            --moz-transition: all .3s;
+            -moz-transition: all .3s;
+            border-bottom: 1px rgb(235, 235, 235) solid;
+        }
+        .card li:first-child a {
+            border-top-left-radius:5px;
+            border-top-right-radius:5px;
+        }
+        .card li:last-child a {
+            border-bottom-left-radius:5px;
+            border-bottom-right-radius:5px;
         }
         .card li a:hover {
-            color: #0099CC;
+            background: #0066CC;
+            border-bottom: 1px #0066CC solid;
             transition: all .3s;
             -webkit-transition: all .3s;
-            --moz-transition: all .3s;
+            -moz-transition: all .3s;
+        }
+        .card li a:hover h3, .card li a:hover p {
+            color: #fff;
         }
         .card p {
             margin: 0;
@@ -88,16 +108,11 @@
             margin-bottom: 10px;
         }
         .item {
-            margin: 10px 10px 10px 30px;
-        }
-        .card li:first-child .item{
-            margin-top: 0;
-        }
-        .card li:last-child .item{
-            margin-bottom: 0;
+            padding: 10px 20px;
         }
         footer {
             padding-top: 10px;
+            padding-bottom: 20px;
             text-align: center;
             color: rgb(180, 180, 180);
         }
@@ -123,55 +138,71 @@
         <div class="card">
             <ul>
                 <li>
-                    <div class="item">
-                        <a href="lab1/index.html">Lab 1</a>
-                        <p>简单的 HTML 与 CSS</p>
-                    </div>
+                    <a href="lab1/index.html">
+                        <div class="item">
+                            <h3>Lab 1</h3>
+                            <p>简单的 HTML 与 CSS</p>
+                        </div>
+                    </a>
                 </li>
                 
                 <li>
-                    <div class="item">
-                        <a href="lab2/journal.html">Lab 2</a>
-                        <p>CSS 盒子模型、响应式布局以及块级格式上下文</p>
-                    </div>
+                    <a href="lab2/journal.html">
+                        <div class="item">
+                            <h3>Lab 2</h3>
+                            <p>CSS 盒子模型、响应式布局以及块级格式上下文</p>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="item">
-                        <a href="https://github.com/yickli/WEB-2.0/tree/gh-pages">Lab 3</a>
-                        <p>Python 文件读写、tornado 框架学习</p>
-                    </div>
+                    <a href="https://github.com/yickli/WEB-2.0/tree/gh-pages">
+                        <div class="item">
+                            <h3>Lab 3</h3>
+                            <p>Python 文件读写、tornado 框架学习</p>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="item">
-                        <a href="https://github.com/yickli/WEB-2.0/tree/gh-pages">Lab 4</a>
-                        <p>HTML 表单(POST)、Tornado、正则表达式 </p>
-                    </div>
+                    <a href="https://github.com/yickli/WEB-2.0/tree/gh-pages">
+                        <div class="item">
+                            <h3>Lab 4</h3>
+                            <p>HTML 表单(POST)、Tornado、正则表达式 </p>
+                        </div>
+                    </a>
                 </li>
 
                 <li>
-                    <div class="item">
-                        <a href="hw1/index.html">Homework 1</a>
-                        <p>简单的 HTML, CSS 和一些基础的 CSS3</p>
-                    </div>
+                    <a href="hw1/index.html">
+                        <div class="item">
+                            <h3>Homework 1</h3>
+                            <p>简单的 HTML, CSS 和一些基础的 CSS3</p>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="item">
-                        <a href="hw2/skeleton.html">Homework 2</a>
-                        <p>HTML、CSS 页面布局</p>
-                    </div>
+                    <a href="hw2/skeleton.html">
+                        <div class="item">
+                            <h3>Homework 2</h3>
+                            <p>HTML、CSS 页面布局</p>
+                        </div>
+                    </a>
                 </li>
                 
                 <li>
-                    <div class="item">
-                        <a href="https://github.com/yickli/WEB-2.0/tree/gh-pages">Homework 3</a>
-                        <p>Tornado 与 Python 文件读写</p>
-                    </div>
+                    <a href="https://github.com/yickli/WEB-2.0/tree/gh-pages">
+                        <div class="item">
+                            <h3>Homework 3</h3>
+                            <p>Tornado 与 Python 文件读写</p>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="item">
-                        <a href="https://github.com/yickli/WEB-2.0/tree/gh-pages">Homework 4</a>
-                        <p>Python OOP 与 Tornado 简单文件上传</p>
-                    </div>
+                    <a href="https://github.com/yickli/WEB-2.0/tree/gh-pages">
+                        <div class="item">
+                            <h3>Homework 4</h3>
+                            <p>Python OOP 与 Tornado 简单文件上传</p>
+                        </div>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -179,34 +210,44 @@
         <div class="card">
             <ul>
                 <li>
-                    <div class="item">
-                        <a href="circlemenu/index.html">Circle Menu</a>
-                        <p>CSS3 的 transition 以及嵌套选择器</p>
-                    </div>
+                    <a href="circlemenu/index.html">
+                        <div class="item">
+                            <h3>Circle Menu</h3>
+                            <p>CSS3 的 transition 以及嵌套选择器</p>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="item">
-                        <a href="waterfall/activity.html">Waterfall Design</a>
-                        <p>瀑布局页面布局，简单的 jQuery 以及 DOM 操作</p>
-                    </div>
+                    <a href="waterfall/activity.html">
+                        <div class="item">
+                            <h3>Waterfall Design</h3>
+                            <p>瀑布局页面布局，简单的 jQuery 以及 DOM 操作</p>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="item">
-                        <a href="tablesorter/index.html">Table Sorter</a>
-                        <p>原生 JavaScript 实现表格(table) 排序</p>
-                    </div>
+                    <a href="tablesorter/index.html">
+                        <div class="item">
+                            <h3>Table Sorter</h3>
+                            <p>原生 JavaScript 实现表格(table) 排序</p>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="item">
-                        <a href="useragent/index.html">Useragent Dectect</a>
-                        <p>Tornado 或 Javascript 用户代理检测，正则学习</p>
-                    </div>
+                    <a href="useragent/index.html">
+                        <div class="item">
+                            <h3>Useragent Dectect</h3>
+                            <p>Tornado 或 Javascript 用户代理检测，正则学习</p>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="item">
-                        <a href="http://www.oapp.me/admin">QQ OAuth2.0 for Tornado</a>
-                        <p>Tornado 外部服务验证实例，根据 Facebook 例子编写</p>
-                    </div>
+                    <a href="http://www.oapp.me/admin">
+                        <div class="item">
+                            <h3>QQ OAuth2.0 for Tornado</h3>
+                            <p>Tornado 外部服务验证实例，根据 Facebook 例子编写</p>
+                        </div>
+                </a>
                 </li>
             </ul>
         </div>
