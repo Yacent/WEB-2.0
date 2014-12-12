@@ -65,8 +65,8 @@ div {
 
 
 /* your additional styles go here */
-.wtfname {
-	width: 25em;
+._name {
+	width: 16em;
 }
 .seek {
 	width:2em;
@@ -77,22 +77,21 @@ div {
 ._age {
 	width: 2em;
 }
-button {
+.signup {
 	background-color: #FFAAAA;
 	font-size:120%;
 	font-weight: bold;
 }
-form {
+.myform {
 	background-color: #E0E0FF;
 	border-bottom: 2px;
 	border: outset;
-	padding: 5px;
 }
 strong {
 	width: 11em;
 	display: inline-block;
 }
-.head {
+.headline {
 	font-size: 110%;
 	border-style: outset;
 	display: inline-block;
@@ -100,7 +99,4 @@ strong {
 	position: relative;
 	top:7px;
 	left: 2px;
-}
-.ageee input {
-	width: 50px;
 }

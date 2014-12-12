@@ -6,6 +6,10 @@ import tornado.ioloop
 import tornado.options
 import tornado.web
 
+import tornado.options
+from tornado.options import define, options
+define("port", default=8888, help="run on the given port", type=int)
+
 class Person(object):
     '''define person'''
     def __init__(self, name, gender, age, ptype, pos, sex, age_start, age_end):
@@ -213,7 +217,7 @@ class LuvHandler(tornado.web.RequestHandler):
             per.sex, str(per.age_start), str(per.age_end)]
             singles.write(','.join(seq)+'\n')
             singles.close()
-            self.render('results.html', persons=Person.get_list(per))
+            self.render('results.html', persons=Person.get_list(per), ori_name=name)
 
     def data_received(self, chunk):
         pass
@@ -225,13 +229,13 @@ def main():
     tornado.options.parse_command_line()
     pth = os.path.dirname(__file__)
     app = tornado.web.Application(
-        handlers=[(r"/nurdluv", LuvHandler)],
+        handlers=[(r"/nerdluv", LuvHandler)],
         template_path=os.path.join(pth, "templates"),
         static_path=os.path.join(pth, "static"),
         debug=True
     )
     http_server = tornado.httpserver.HTTPServer(app)
-    http_server.listen(8888)
+    http_server.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == "__main__":

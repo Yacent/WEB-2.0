@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 			{% block body %}
-			Returning User:
+			<div class="head">Returning User:</div>
 			<form method="get">
 				Name:
-				<input type="text" name="old_name">
+				<input type="text" name="old_name"><br>
 				<button>View My Matches</button>
 			</form>
-			New User Signup:
+			<div class="head">New User Signup:</div>
 			<form enctype="multipart/form-data" method="post">
-				<div>
+				<div class="wtfname">
 					<strong>Name:</strong>
 					<input type="text" name="name">
 				</div>
@@ -47,7 +47,7 @@
 					<input type="checkbox" name="sex" value="F">Female
 				</div>
 				
-				<div>
+				<div class="ageee">
 					<strong>Between ages:</strong>
 					<input type="text" name="age_start"> and
 					<input type="text" name="age_end">
