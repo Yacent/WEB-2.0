@@ -5,7 +5,7 @@ $(function(){
             $text.css({
                 fontSize: '+=2'
             });
-        }, 500);
+        },500);
         
         if (!!$("input[name='bling']").attr("checked")) {
             $text.css({
