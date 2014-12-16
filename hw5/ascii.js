@@ -29,7 +29,7 @@ window.onload = function() {
         return sizeArr[idx];
     };
 
-    startBtn.onclick = function() {     
+    startBtn.onclick = function() {
         var animation = select.value,
             frameList = ANIMATIONS[animation].split("=====\n");
 
@@ -37,15 +37,16 @@ window.onload = function() {
             index = index >= frameList.length-1 ? 0 : index+1;
             displayArea.value = frameList[index];
             displayArea.style.fontSize = getSize();
+            
             var delay = isTurbo() ? minDelay : maxDelay;
+            
             timer = setTimeout(play, delay);
         };
 
-        if (animation !== lastAni) {
-            index = 0;
-        }
+        if (animation !== lastAni) index = 0;
         lastAni = animation;
         play();
+
         select.setAttribute("disabled", "disabled");
         startBtn.setAttribute("disabled", "disabled");
     };
