@@ -2,31 +2,41 @@
     window.onload = function(){
         var puzzleArea = document.getElementById("puzzlearea");
         var puzzlePieces = puzzleArea.getElementsByTagName("div");
-        var shuffleBtn = document.getElementById("shufflebutton")
-        var columns = 4, isMoving = 0;
-        var step = 10;
+        var shuffleBtn = document.getElementById("shufflebutton");
+        var columns = 4,
+           isMoving = 0,
+              steps = 0,
+               step = 10;
         var blank = {
             top : getTop(puzzlePieces.length)+'px',
             left : getLeft(puzzlePieces.length)+'px'
         }
+        
+        // 获得顶部位置算法
         function getTop(index) {
             return Math.floor(index/4)*100;
         }
+        // 获得左边位置算法
         function getLeft(index) {
             return index%4*100;
         }
+        // 交换滑块与空白位置
         function swapPosition(element, blank, delay) {
+            // 不相邻或者正在移动则返回
             if (!nearBlank(element) || isMoving == 1) {
                 return;
             }
+
             var tmpTop = element.style.top,
                 tmpLeft = element.style.left;
+            
             if (delay == 0) {
                 element.style.left = blank.left;
                 element.style.top = blank.top;
                 blank.top = tmpTop;
                 blank.left = tmpLeft;
             } else {
+                // 移动滑块
                 function movePiece() {
                     if (element.style.top != blank.top || element.style.left != blank.left) {
                         element.style.left = parseInt(element.style.left)+getSign(element).horizon*step+'px';
@@ -41,8 +51,11 @@
                     }
                 }
                 movePiece();
+                steps++;
+                refreshScreen();
             }
         }
+        // 判断滑块是否相邻
         function nearBlank(element) {
             var dist = distance(element);
             if (dist.vertical == 100 && dist.horizon == 0) {
@@ -53,12 +66,14 @@
             }
             return false;
         }
+        // 获得滑块间绝对距离
         function distance(element) {
             return {
                 vertical : Math.abs(interval(element).vertical),
                 horizon  : Math.abs(interval(element).horizon)
             }
         }
+        // 获得相对距离的符号
         function getSign(element) {
             return {
                 vertical : computeSign(element, 'vertical'),
@@ -71,6 +86,7 @@
             else if (temp < 0) return 1;
             else return 0;
         }
+        // 获得滑块间相对距离
         function interval(element) {
             return {
                 vertical : parseInt(element.style.top)-parseInt(blank.top),
@@ -94,6 +110,7 @@
         function hasClass(element, value) {
             return element.className.match(new RegExp('(\\s|^)'+value+'(\\s|$)'));
         }
+        // 判断是否完成游戏
         function isFinish() {
             for (var i = 0; i < puzzlePieces.length; i++) {
                 var pos = puzzlePieces[i].style.backgroundPosition.split(" ");
@@ -104,20 +121,22 @@
             }
             return true;
         }
-
-        for (var i = 0; i < puzzlePieces.length; i++) {
-            addClass(puzzlePieces[i],"puzzlepiece");
-            puzzlePieces[i].style.top = getTop(i)+'px';
-            puzzlePieces[i].style.left = getLeft(i)+'px';
-            puzzlePieces[i].style.backgroundPosition = -1*getLeft(i)+'px '+(-1)*getTop(i)+'px';
-            puzzlePieces[i].onclick = function(event) {
-                swapPosition(event.target, blank, 10);
-                if (isFinish()) {
-                    alert("win");
-                }
-            };
+        // 初始化并监听滑块点击事件
+        function addListener() {
+            for (var i = 0; i < puzzlePieces.length; i++) {
+                addClass(puzzlePieces[i],"puzzlepiece");
+                puzzlePieces[i].style.top = getTop(i)+'px';
+                puzzlePieces[i].style.left = getLeft(i)+'px';
+                puzzlePieces[i].style.backgroundPosition = -1*getLeft(i)+'px '+(-1)*getTop(i)+'px';
+                puzzlePieces[i].onclick = function(event) {
+                    swapPosition(event.target, blank, 5);
+                    if (isFinish() && steps != 0) {
+                        alert("win");
+                    }
+                };
+            }
         }
-
+        // 洗牌
         function refresh() {
             var count = 800;
             while(count--) {
@@ -127,7 +146,49 @@
                     swapPosition(puzzlePieces[i], blank, 0);
                 }
             }
+            steps = 0;
+            refreshScreen();
         }
+        // 更换背景图片
+        function selectOnChange() {
+            var slt = document.getElementsByTagName("select")[0];
+            slt.onchange = function() {
+                var val = slt.value;
+                for (var i = 0; i < puzzlePieces.length; i++) {
+                    puzzlePieces[i].style.backgroundImage = 'url('+val+'.jpg)';
+                }
+            };
+        }
+        // 增加控制组件
+        function addController(callback) {
+            var ctrls = document.getElementById("controls");
+            var bgList = ["background", "background1", "background2", "background3"];
+            var changeBg = document.createElement("select");
+            for (var i = 0; i < 4; i++) {
+                var option = document.createElement("option");
+                option.innerHTML = bgList[i];
+                option.setAttribute("value", bgList[i]);
+                changeBg.appendChild(option);
+            }
+            ctrls.appendChild(changeBg);
+            callback();
+        }
+        // 增加步数屏幕
+        function addScreen() {
+            var scrn = document.createElement("span");
+            var ctrls = document.getElementById("controls");
+            scrn.setAttribute("id", "screen");
+            ctrls.appendChild(scrn);
+            refreshScreen();
+        }
+        // 刷新步数屏幕
+        function refreshScreen() {
+            var scrn = document.getElementById("screen");
+            scrn.innerHTML = steps;
+        }
+        addListener();
         shuffleBtn.onclick = refresh;
+        addController(selectOnChange);
+        addScreen();
     };
 })();
