@@ -35,6 +35,7 @@
                 element.style.top = blank.top;
                 blank.top = tmpTop;
                 blank.left = tmpLeft;
+                pieceHover();
             } else {
                 // 移动滑块
                 function movePiece() {
@@ -48,6 +49,10 @@
                         isMoving = 0;
                         blank.top = tmpTop;
                         blank.left = tmpLeft;
+                        pieceHover();
+                        if (isFinish() && steps != 0) {
+                            youWin();
+                        }
                     }
                 }
                 movePiece();
@@ -130,18 +135,32 @@
                 puzzlePieces[i].style.backgroundPosition = -1*getLeft(i)+'px '+(-1)*getTop(i)+'px';
                 puzzlePieces[i].onclick = function(event) {
                     swapPosition(event.target, blank, 5);
-                    if (isFinish() && steps != 0) {
-                        alert("win");
-                    }
                 };
+            }
+        }
+        // 胜利
+        function youWin() {
+            var slt = document.getElementsByTagName("select")[0];
+            puzzleArea.style.backgroundImage = 'url('+ slt.value +'.jpg)';
+            var pp = document.createElement("h2");
+            pp.innerHTML = "youwin!";
+            puzzleArea.appendChild(pp);
+            for (var i = 0; i < puzzlePieces.length; i++) {
+                puzzlePieces[i].style.display = 'none';
             }
         }
         // 洗牌
         function refresh() {
-            var count = 800;
+            var slt = document.getElementsByTagName("select")[0];
+            var spp = puzzleArea.getElementsByTagName("h2")[0];
+            puzzleArea.style.backgroundImage = 'none';
+            spp.style.display = 'none';
+            for (var i = 0; i < puzzlePieces.length; i++) {
+                puzzlePieces[i].style.display = 'block';
+            }
+            var count = 500;
             while(count--) {
                 var index = Math.floor(Math.random()*puzzlePieces.length);
-                console.log(index);
                 for (var i = 0; i < puzzlePieces.length; i++) {
                     swapPosition(puzzlePieces[i], blank, 0);
                 }
@@ -151,7 +170,7 @@
         }
         // 更换背景图片
         function selectOnChange() {
-            var slt = document.getElementsByTagName("select")[0];
+            var slt = document.getElementsByTagName("select")[0];  
             slt.onchange = function() {
                 var val = slt.value;
                 for (var i = 0; i < puzzlePieces.length; i++) {
@@ -185,6 +204,15 @@
         function refreshScreen() {
             var scrn = document.getElementById("screen");
             scrn.innerHTML = steps;
+        }
+        // 可移动块鼠标悬停事件
+        function pieceHover() {
+            for (var i = 0; i < puzzlePieces.length; i++) {
+                removeClass(puzzlePieces[i], 'movablepiece');
+                if (nearBlank(puzzlePieces[i])) {
+                    addClass(puzzlePieces[i], 'movablepiece');
+                }
+            }
         }
         addListener();
         shuffleBtn.onclick = refresh;
