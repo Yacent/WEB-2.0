@@ -7,7 +7,7 @@
  */
 ;$(function() {
     var $puzzleArea = $("#puzzlearea");
-    var puzzlePieces = $puzzleArea.find("div");
+    var puzzlePieces = $puzzleArae.find("div");
     var $shuffleBtn = $("#shufflebutton");
     var $ctrls = $("#controls");
     var columns = 4,
