@@ -120,10 +120,11 @@ textarea {
     outline: none;
     height: 24px;
     margin-left: 12%;
-    margin-right: 14%;
+    margin-right: 13%;
     padding-top: 8px;
     padding-bottom: 8px;
-    width: 74%;
+    width: 75%;
+    resize: none;
 }
 .input-area form {
     position: relative;
@@ -141,6 +142,9 @@ textarea {
     outline: none;
     background: #5BACDB;
     box-shadow: none;
+    background-image: url(send.png);
+    background-size: 26px 26px;
+    background-repeat: no-repeat;
     border-radius: 13px;
     height: 26px;
     width: 26px;
@@ -157,15 +161,7 @@ textarea {
     position: absolute;
     right: 0;
 }
-.send-btn {
-    display: block;
-    width: 18px;
-    height: 12px;
-    background-image: url(send.png);
-    background-size: 14px 10px;
-    background-repeat: no-repeat;
-    margin: 7px auto;
-}
+
 .divider {
     position: relative;
     text-align: center;
@@ -220,9 +216,9 @@ textarea {
     background-repeat: no-repeat;
     background-size: 22px;
     width: 22px;
-    height: 15px;
+    height: 22px;
     top: 50%;
-    margin-top: -8px;
+    margin-top: -11px;
     opacity: 0.6;
     left: 10px;
 }
