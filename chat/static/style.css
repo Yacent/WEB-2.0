@@ -1,0 +1,94 @@
+.msg {
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 4px;
+}
+.msg-left {
+    position: absolute;
+    display: inline-block;
+    width: 70px;
+    bottom: 0;
+    vertical-align: top;
+}
+.msg-right {
+    margin-left: 70px;
+    padding-bottom: 6px;
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+}
+.msg-send-right {
+    float: right;
+    margin-right: 70px;
+    padding-bottom: 6px;
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+.msg-send-left {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+    width: 70px;
+    vertical-align: top;
+}
+.avatar {
+    bottom: 0;
+    height: 50px;
+    width: 50px;
+    background-color: #00c4cc;
+    border-radius: 25px;
+}
+.msg-send-left .avatar {
+    float: right;
+}
+.msg-bubble-receive {
+    position: relative;
+    //width: 400px;
+    background-color: #60B5D2;
+    border-radius: 21px;
+    color: #fff;
+}
+.msg-bubble-receive:before {
+    position: absolute;
+    left: -8px;
+    content: " ";
+    display: block;
+    bottom: -1px;
+    width: 21px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: 0 -6px;
+    background-image: url(triangular.png);
+}
+.msg-bubble-send {
+    position: relative;
+    //width: 400px;
+    background-color: #E9EEEE;
+    border-radius: 21px;
+    color: #000;
+}
+.msg-bubble-send:after {
+    position: absolute;
+    right: -8px;
+    content: " ";
+    display: block;
+    bottom: -1px;
+    width: 21px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: 0 -6px;
+    background-image: url(triangular-right.png);
+}
+.msg-bubble-receive .msg-content {
+    padding: 10px 16px 10px 36px;
+}
+.msg-bubble-send .msg-content {
+    padding: 10px 36px 10px 16px;
+}
+.msg-content p {
+    word-break: break-all;
+    margin: 0;
+}

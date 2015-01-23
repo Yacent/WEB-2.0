@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+input {
+    font-family: sans-serif;
+}
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+.msg {
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 4px;
+}
+.msg-left {
+    position: absolute;
+    display: inline-block;
+    width: 70px;
+    bottom: 0;
+    vertical-align: top;
+}
+.msg-right {
+    margin-left: 70px;
+    padding-bottom: 6px;
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+}
+.msg-send-right {
+    float: right;
+    margin-right: 70px;
+    padding-bottom: 6px;
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+.msg-send-left {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+    width: 70px;
+    vertical-align: top;
+}
+.avatar {
+    bottom: 0;
+    height: 50px;
+    width: 50px;
+    background-color: #ccc;
+    border-radius: 25px;
+}
+.msg-send-left .avatar {
+    float: right;
+}
+.msg-bubble-receive {
+    position: relative;
+    background-color: #60B5D2;
+    border-radius: 21px;
+    color: #fff;
+}
+.msg-bubble-receive:before {
+    position: absolute;
+    left: -8px;
+    content: " ";
+    display: block;
+    bottom: -1px;
+    width: 21px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: 0 -6px;
+    background-image: url(triangular.png);
+}
+.msg-bubble-send {
+    position: relative;
+    background-color: #E9EEEE;
+    border-radius: 21px;
+    color: #666;
+}
+.msg-bubble-send:after {
+    position: absolute;
+    right: -8px;
+    content: " ";
+    display: block;
+    bottom: -1px;
+    width: 21px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: 0 -6px;
+    background-image: url(triangular-right.png);
+}
+.msg-bubble-receive .msg-content {
+    padding: 10px 12px 10px 24px;
+}
+.msg-bubble-send .msg-content {
+    padding: 10px 24px 10px 12px;
+}
+.msg-content p {
+    word-break: break-all;
+    margin: 0;
+}
+.input-area {
+    background-color: #E2E9EE;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    border-top: 2px solid #D2D9DD;
+}
+.input-area input {
+    border: none;
+    background-color: transparent;
+    display: block;
+    outline: none;
+    height: 34px;
+    line-height: 34px;
+    margin-top: 13px;
+    margin-left: 12%;
+    margin-right: 14%;
+    width: 74%;
+}
+.input-area form {
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+.input-area button {
+    cursor: pointer;
+    top: 50%;
+    margin-top: -13px;
+    right: 6px;
+    border: none;
+    outline: none;
+    background: #5BACDB;
+    box-shadow: none;
+    border-radius: 13px;
+    height: 26px;
+    width: 26px;
+    overflow: hidden;
+}
+.input-area button:active {
+    background: #2B7C9B;
+}
+.fake-input {
+    height: 60px;
+    margin: 0;
+}
+.send {
+    position: absolute;
+    right: 0;
+}
+.send-btn {
+    display: block;
+    width: 18px;
+    height: 12px;
+    background-image: url(send.png);
+    background-size: 14px 10px;
+    background-repeat: no-repeat;
+    margin: 7px auto;
+}
+.divider {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 20px;
+}
+.split-line {
+    width: 75%;
+    margin: 0 auto;
+    border-bottom: 1px solid #bbb;
+    height: 1px;
+}
+.line-content {
+    position: absolute;
+}
+.line-label {
+    position: relative;
+    padding: 0 9px;
+    top: -12px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    color:#bbb;
+    text-align: center;
+    background-color: #fff;
+    height: 12px;
+}
+.line-label p {
+    margin: 0;
+}
+.msg-image .msg-bubble-send {
+}
+.msg-image p {
+    padding-left: 16px;
+    padding-right: 32px;
+}
+.msg-image img {
+    width: 200px;
+}
+.msg-image .msg-content {
+    overflow: hidden;
+    padding: 0;
+    padding-bottom: 10px;
+    border-radius: 21px;
+}
+.append-photo {
+    position: absolute;
+    cursor: pointer;
+    background-image: url(photo.png);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    width: 22px;
+    height: 15px;
+    top: 50%;
+    margin-top: -8px;
+    opacity: 0.6;
+    left: 10px;
+}
+.append-photo:active {
+    opacity: 1;
+}
