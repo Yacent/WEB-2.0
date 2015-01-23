@@ -50,6 +50,9 @@ $(function(){
         this.justifyDoc.html(html);
         t.height(this.justifyDoc.height());
     });
+    $("textarea").focus(function() {
+        $("html, body").scrollTop($(document).height());
+    });
     
 });
 
