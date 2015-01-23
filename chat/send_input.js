@@ -52,6 +52,8 @@ $(function(){
     });
     $("textarea").focus(function() {
         $("html, body").scrollTop($(document).height());
+        $("textarea").val($("html, body").scrollTop());
+        $(".fake-input").css("height", "200px");
     });
     
 });
