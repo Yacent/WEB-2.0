@@ -88,6 +88,7 @@ input {
     width: 21px;
     height: 24px;
     background-repeat: no-repeat;
+    background-size: 21px;
     background-position: 0 -6px;
     background-image: url(triangular-right.png);
 }
