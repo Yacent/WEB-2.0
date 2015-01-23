@@ -51,9 +51,9 @@ $(function(){
         t.height(this.justifyDoc.height());
     });
     $("textarea").focus(function() {
-        $("html, body").scrollTop($(document).height());
-        $("textarea").val($("html, body").scrollTop());
-        $(".fake-input").css("height", "200px");
+        setTimeout(function(){
+            $("html, body").scrollTop($(document).height());
+        }, 700);
     });
     
 });
