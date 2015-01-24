@@ -342,6 +342,8 @@ form.form-outside {
     transition: all .3s;
 }
 .record-btn p {
+    -webkit-user-select: none;
+    -moz-user-select: none; 
     color: #444;
     margin: 0 auto;
     line-height: 34px;
