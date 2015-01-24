@@ -84,5 +84,10 @@ $(function(){
             "background-color": '#FFF'
         });
     });
+    $(':not(".input-area")').on("touchmove", function() {
+        if ($("textarea").focus()) {
+            $("textarea").blur();
+        }
+    });
 });
 
