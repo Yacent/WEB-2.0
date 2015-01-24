@@ -85,10 +85,8 @@ $(function(){
         });
     });
     m = 0;
-    $(':not(".input-area")').on("touchmove", function() {
+    $('.wrapper').on("touchmove", function() {
         if ($("textarea").is(":focus")) {
-            $("textarea").val("focus"+m);
-            m++;
             $("textarea").blur();
         }
     });
