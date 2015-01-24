@@ -71,12 +71,14 @@ $(function(){
         $("form").removeClass('form-outside');
     });
     $(".record-btn").on("touchstart", function() {
+        event.preventDefault();
         $(".record-btn").find("p").text("松开结束");
         $(this).css({
             "background-color": '#DDD'
         });
     })
-    .on("touchend", function() {
+    .on("touchend", function(event) {
+        event.preventDefault();
         $(".record-btn").find("p").text("按住录音");
         $(this).css({
             "background-color": '#FFF'
