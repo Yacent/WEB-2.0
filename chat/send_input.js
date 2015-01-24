@@ -50,11 +50,31 @@ $(function(){
         this.justifyDoc.html(html);
         t.height(this.justifyDoc.height());
     });
-    $("textarea").focus(function() {
+    var isFocus = 0;
+    $("textarea").focus(function(){
+        isFocus = 1;
+    });
+    $("textarea").blur(function(){
+        isFocus = 0;
+    });
+    $("textarea").click(function() {
         setTimeout(function(){
             $("html, body").scrollTop($(document).height());
-        }, 700);
+        }, 500);
     });
-    
+    $(".append-record").click(function(){
+        $(".record-mode").addClass('mode-active');
+        $("form").addClass('form-outside');
+    });
+    $(".keyboard-btn").click(function() {
+        $(".record-mode").removeClass('mode-active');
+        $("form").removeClass('form-outside');
+    });
+    $(".record-btn").on("touchstart", function() {
+        $(".record-btn").find("p").text("松开结束");
+    })
+    .on("touchend", function() {
+        $(".record-btn").find("p").text("按住录音");
+    });
 });
 

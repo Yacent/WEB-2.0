@@ -1,6 +1,7 @@
 body {
-    margin: 0;
     font-family: sans-serif;
+
+    margin: 0;
 }
 textarea {
     font-family: sans-serif;
@@ -10,90 +11,116 @@ textarea {
     margin: 0 auto;
 }
 .msg {
-    margin-top: 5px;
     position: relative;
+
     overflow: hidden;
+
+    margin-top: 5px;
     padding-top: 6px;
 }
 .msg-left {
     position: absolute;
-    display: inline-block;
-    width: 70px;
     bottom: 0;
+
+    display: inline-block;
+
+    width: 70px;
+
     vertical-align: top;
 }
 .msg-right {
+    display: inline-block;
+
+    max-width: 68%;
     margin-left: 70px;
     padding-bottom: 7px;
-    display: inline-block;
-    //width: auto;
-    max-width: 68%;
+
     vertical-align: top;
+
+    //width: auto;
 }
 .msg-send-right {
+    display: inline-block;
     float: right;
+
+    max-width: 68%;
     margin-right: 70px;
     padding-bottom: 6px;
-    max-width: 68%;
-    //width: auto;
-    display: inline-block;
+
     vertical-align: top;
+
+    //width: auto;
 }
 .msg-send-left {
     position: absolute;
     right: 0;
     bottom: 0;
+
     display: inline-block;
+
     width: 70px;
+
     vertical-align: top;
 }
 .avatar {
     bottom: 0;
-    height: 50px;
+
     width: 50px;
-    background-color: #ccc;
+    height: 50px;
+
     border-radius: 25px;
+    background-color: #ccc;
 }
 .msg-send-left .avatar {
     float: right;
 }
 .msg-bubble-receive {
     position: relative;
-    background-color: #60B5D2;
-    border-radius: 21px;
+
     color: #fff;
+    border-radius: 21px;
+    background-color: #60b5d2;
 }
 .msg-bubble-receive:before {
     position: absolute;
-    left: -8px;
-    content: " ";
-    display: block;
     bottom: -1px;
+    left: -8px;
+
+    display: block;
+
     width: 21px;
     height: 24px;
-    background-repeat: no-repeat;
-    background-size: 21px;
-    background-position: 0 -6px;
+
+    content: ' ';
+
     background-image: url(triangular.png);
+    background-repeat: no-repeat;
+    background-position: 0 -6px;
+    background-size: 21px;
 }
 .msg-bubble-send {
     position: relative;
-    background-color: #E9EEEE;
-    border-radius: 21px;
+
     color: #666;
+    border-radius: 21px;
+    background-color: #e9eeee;
 }
 .msg-bubble-send:after {
     position: absolute;
     right: -8px;
-    content: " ";
-    display: block;
     bottom: -1px;
+
+    display: block;
+
     width: 21px;
     height: 24px;
-    background-repeat: no-repeat;
-    background-size: 21px;
-    background-position: 0 -6px;
+
+    content: ' ';
+
     background-image: url(triangular-right.png);
+    background-repeat: no-repeat;
+    background-position: 0 -6px;
+    background-size: 21px;
 }
 .msg-bubble-receive .msg-content {
     padding: 10px 12px 10px 24px;
@@ -102,56 +129,73 @@ textarea {
     padding: 10px 24px 10px 12px;
 }
 .msg-content p {
-    word-break: break-all;
     margin: 0;
+
+    word-break: break-all;
 }
 .input-area {
-    background-color: #E2E9EE;
     position: fixed;
-    width: 100%;
-    left: 0;
+    overflow: hidden;
     bottom: 0;
-    border-top: 2px solid #D2D9DD;
+    left: 0;
+
+    width: 100%;
+
+    border-top: 2px solid #d2d9dd;
+    background-color: #e2e9ee;
 }
 .input-area textarea {
-    border: none;
-    background-color: transparent;
     display: block;
-    outline: none;
+
+    width: 67%;
     height: 24px;
-    margin-left: 12%;
     margin-right: 13%;
+    margin-left: 20%;
     padding-top: 8px;
     padding-bottom: 8px;
-    width: 75%;
+    font-size: 15px;
+
     resize: none;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 .input-area form {
     position: relative;
-    background-color: #fff;
-    border-radius: 20px;
+    right: 0;
     width: 90%;
-    margin: 12px auto;
+    margin: 10px auto;
+    
+    border-radius: 20px;
+    background-color: #fff;
+    -webkit-transition: right .5s ease-in;
+    -o-transition: right .5s ease-in;
+    transition: right .5s ease-in;
 }
 .input-area button {
-    cursor: pointer;
     top: 50%;
-    margin-top: -13px;
     right: 6px;
-    border: none;
-    outline: none;
-    background: #5BACDB;
-    box-shadow: none;
-    background-image: url(send.png);
-    background-size: 26px 26px;
-    background-repeat: no-repeat;
-    border-radius: 13px;
-    height: 26px;
-    width: 26px;
+
     overflow: hidden;
+    opacity: .7;
+    width: 26px;
+    height: 26px;
+    margin-top: -13px;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 13px;
+    outline: none;
+    background: #5bacdb;
+    background-image: url(send.png);
+    background-repeat: no-repeat;
+    background-size: 26px 26px;
+    box-shadow: none;
 }
 .input-area button:active {
-    background: #2B7C9B;
+    opacity: 1;
 }
 .fake-input {
     height: 60px;
@@ -164,64 +208,166 @@ textarea {
 
 .divider {
     position: relative;
-    text-align: center;
+
     width: 100%;
+    height: 20px;
     margin-top: 30px;
     margin-bottom: 10px;
-    height: 20px;
+
+    text-align: center;
 }
 .split-line {
     width: 75%;
-    margin: 0 auto;
-    border-bottom: 1px solid #bbb;
     height: 1px;
+    margin: 0 auto;
+
+    border-bottom: 1px solid #ccc;
 }
 .line-content {
     position: absolute;
 }
 .line-label {
-    position: relative;
-    padding: 0 9px;
-    top: -12px;
-    display: inline-block;
     font-size: 12px;
     font-weight: bold;
-    color:#bbb;
-    text-align: center;
-    background-color: #fff;
+
+    position: relative;
+    top: -12px;
+
+    display: inline-block;
+
     height: 12px;
+    padding: 0 9px;
+
+    text-align: center;
+
+    color: #ccc;
+    background-color: #fff;
 }
 .line-label p {
     margin: 0;
 }
-.msg-image .msg-bubble-send {
-}
+
 .msg-image p {
-    padding-left: 16px;
     padding-right: 32px;
+    padding-left: 16px;
 }
 .msg-image img {
     width: 200px;
 }
 .msg-image .msg-content {
     overflow: hidden;
+
     padding: 0;
     padding-bottom: 10px;
+
     border-radius: 21px;
 }
 .append-photo {
     position: absolute;
+    top: 50%;
+    left: 10px;
+
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+
     cursor: pointer;
+
+    opacity: .6;
     background-image: url(photo.png);
     background-repeat: no-repeat;
     background-size: 22px;
+}
+.append-record {
+    position: absolute;
+    top: 50%;
+    left: 38px;
+
     width: 22px;
     height: 22px;
-    top: 50%;
     margin-top: -11px;
-    opacity: 0.6;
-    left: 10px;
+
+    cursor: pointer;
+
+    opacity: .6;
+    background-image: url(record.png);
+    background-repeat: no-repeat;
+    background-size: 22px;
 }
-.append-photo:active {
+.append-photo:active, .append-record:active {
+    opacity: 1;
+}
+
+.record-mode {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: -100%;
+    -webkit-transition: left .5s ease-in;
+    -o-transition: left .5s ease-in;
+    transition: left .5s ease-in;
+}
+.record-mode-area {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+.mode-active {
+    left: 0;
+    -webkit-transition: left .5s ease-in;
+    -o-transition: left .5s ease-in;
+    transition: left .5s ease-in;
+}
+form.form-outside {
+    right: -100%;
+    -webkit-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+.record-btn {
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    height: 34px;
+    width: 85%;
+    background-color: #fff;
+    border-radius: 17px;
+}
+
+.record-btn:active {
+    background-color: #ddd;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+.record-btn p {
+    color: #444;
+    margin: 0 auto;
+    line-height: 34px;
+    text-align: center;
+}
+.keyboard-btn {
+    top: 50%;
+    right: 6px;
+
+    overflow: hidden;
+    opacity: .7;
+    width: 34px;
+    height: 34px;
+    margin-top: -17px;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 17px;
+    outline: none;
+    background: #5bacdb;
+    background-image: url(keyboard.png);
+    background-repeat: no-repeat;
+    background-size: 34px 34px;
+    box-shadow: none;
+}
+.keyboard-btn:active {
     opacity: 1;
 }
