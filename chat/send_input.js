@@ -115,5 +115,8 @@ $(function(){
             $("textarea").blur();
         }
     });
+    $('.msg-voise').on("click", function() {
+        $('.voise-btn').toggleClass('voise-btn-active');
+    });
 });
 
