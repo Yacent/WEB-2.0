@@ -70,12 +70,30 @@ $(function(){
         $(".record-mode").removeClass('mode-active');
         $("form").removeClass('form-outside');
     });
-    $(".record-btn").on("touchstart", function() {
+    var isCancel = false;
+    $(".record-btn").on("touchstart", function(event) {
         event.preventDefault();
         $(".record-btn").find("p").text("松开结束");
+        $(".popup").css('display', 'block');
         $(this).css({
             "background-color": '#DDD'
         });
+        var lastY = event.originalEvent.targetTouches[0].clientY;
+        var criticalLine = $('.input-area').position().top - 160;
+        console.log(criticalLine);
+        var statusJudge = function(event) {
+            var curY = event.originalEvent.targetTouches[0].clientY;
+            if (curY > criticalLine) {
+                isCancel = false;
+                $(".cancel-warning p").text("上滑取消发送");
+                $(".record-btn").find("p").text("松开结束");
+            } else {
+                isCancel = true;
+                $(".cancel-warning p").text("松开取消");
+                $(".record-btn").find("p").text("松开结束，取消发送");
+            }
+        };
+        $("body").on("touchmove", statusJudge);
     })
     .on("touchend", function(event) {
         event.preventDefault();
@@ -83,6 +101,13 @@ $(function(){
         $(this).css({
             "background-color": '#FFF'
         });
+        $(".popup").css('display', 'none');
+        if (isCancel) {
+            console.log('cancel');
+        } else {
+            console.log('send');
+        }
+        $("body").off("touchmove");
     });
     m = 0;
     $('.wrapper').on("touchmove", function() {
