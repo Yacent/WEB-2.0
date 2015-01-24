@@ -72,9 +72,15 @@ $(function(){
     });
     $(".record-btn").on("touchstart", function() {
         $(".record-btn").find("p").text("松开结束");
+        $(this).css({
+            "background-color": '#DDD'
+        });
     })
     .on("touchend", function() {
         $(".record-btn").find("p").text("按住录音");
+        $(this).css({
+            "background-color": '#FFF'
+        });
     });
 });
 

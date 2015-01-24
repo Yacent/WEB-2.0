@@ -335,12 +335,6 @@ form.form-outside {
     border-radius: 17px;
 }
 
-.record-btn:active {
-    background-color: #ddd;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-}
 .record-btn p {
     -webkit-user-select: none;
     -moz-user-select: none; 
