@@ -430,3 +430,13 @@ form.form-outside {
     background-image: url(voise_gray_high.png);
 
 }
+
+@media screen and (min-width: 640px) {
+    .wrapper, .input-area {
+        width: 500px;
+    }
+    .input-area {
+        left: 50%;
+        margin-left: -250px;
+    }
+}
