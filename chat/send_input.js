@@ -79,7 +79,7 @@ $(function(){
             "background-color": '#DDD'
         });
         var lastY = event.originalEvent.targetTouches[0].clientY;
-        var criticalLine = $('.input-area').position().top - 160;
+        var criticalLine = $('.input-area').position().top - 110;
         console.log(criticalLine);
         var statusJudge = function(event) {
             var curY = event.originalEvent.targetTouches[0].clientY;
@@ -105,6 +105,9 @@ $(function(){
         if (isCancel) {
             console.log('cancel');
         } else {
+            var $newE = $('<div class="msg msg-voise"> <div class="msg-send-right"> <div class="msg-bubble-send"> <div class="msg-content"> <p> '+11+' <div class="voise-btn voise-btn-send"></div> </p> </div> </div> </div> <div class="msg-send-left"> <div class="avatar ava-receive"></div> </div> </div>');
+            $('.wrapper').append($newE);
+            $("html, body").scrollTop($(document).height());
             console.log('send');
         }
         $("body").off("touchmove");
@@ -117,6 +120,15 @@ $(function(){
     });
     $('.msg-voise').on("click", function() {
         $(this).find('.voise-btn').toggleClass('voise-btn-active');
+    });
+    $(".send").click(function(event) {
+        event.preventDefault();
+        console.log($("textarea").val());
+        $("textarea").val($("textarea").val().replace(/\n/g,"<br>").replace(/\ /g, '&nbsp;'));
+        var $newEle = $('<div class="msg"> <div class="msg-left"> <div class="msg-left-avatar"> <div class="avatar ava-receive"></div> </div> </div> <div class="msg-right"> <div class="msg-bubble-receive"> <div class="msg-content"> <p> ' + $("textarea").val()+'</p> </div> </div> </div> </div>');
+        $(".wrapper").append($newEle);
+        $("html, body").scrollTop($(document).height());
+        $("textarea").val('').trigger('keyup');
     });
 });
 
