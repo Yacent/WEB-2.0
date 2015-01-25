@@ -116,7 +116,7 @@ $(function(){
         }
     });
     $('.msg-voise').on("click", function() {
-        $('.voise-btn').toggleClass('voise-btn-active');
+        $(this).find('.voise-btn').toggleClass('voise-btn-active');
     });
 });
 

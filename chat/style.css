@@ -413,13 +413,20 @@ form.form-outside {
     background-repeat: no-repeat;
     background-position: center;
 }
-.voise-btn-active {
+.voise-btn.voise-btn-active {
     background-image: url(voise_high.png);
 }
-.msg-bubble-send p {
+.msg-voise .msg-bubble-send p {
     display: inline-block;
 }
 .msg-bubble-send .voise-btn {
     margin-left: 12px;
     margin-right: 0;
+}
+.voise-btn.voise-btn-send {
+    background-image: url(voise_gray_low.png);
+}
+.voise-btn.voise-btn-send.voise-btn-active{
+    background-image: url(voise_gray_high.png);
+
 }
