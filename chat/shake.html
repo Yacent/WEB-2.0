@@ -7,6 +7,8 @@
     <style>
     body {
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
     .shake-pattern {
         margin: 80px auto;
@@ -26,6 +28,14 @@
         margin: 0;
     }
     </style>
+
+</head>
+<body>
+    <div class="shake-pattern"></div>
+    <div class="shake-title">
+        <h2>摇一摇</h2>
+        <p>以认识新朋友</p>
+    </div>
     <script type="text/javascript">
       window.onload=function(){init();}
       var SHAKE_THRESHOLD=3000;//定义一个摇动的阈值
@@ -54,11 +64,6 @@
           z=acceleration.z;//获取加速度垂直方向
           var speed=Math.abs(x+y+z-last_x-last_y-last_z)/diffTime*10000;//计算阈值
           if(speed>SHAKE_THRESHOLD){
-            // alert("摇动了，关闭播放自动播放");
-            // var media=document.getElementById("musicBox");//获取音频控件
-            // media.setAttribute("src","http://192.168.1.125/mohe/upload/audio/20140930/20140930114522_485.mp3");
-            // media.load();//加载音频
-            // media.play();//播放音频
             var p = document.getElementsByTagName('p')[0];
             p.innerHTML = 'shaking';
           }
@@ -69,12 +74,5 @@
         }
       }
     </script>
-</head>
-<body>
-    <div class="shake-pattern"></div>
-    <div class="shake-title">
-        <h2>摇一摇</h2>
-        <p>以认识新朋友</p>
-    </div>
 </body>
 </html>

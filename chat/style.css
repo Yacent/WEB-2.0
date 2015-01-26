@@ -440,3 +440,93 @@ form.form-outside {
         margin-left: -250px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+#signup {
+    font-family: sans-serif;
+    background-color: #F7F6F2;
+}
+#signup input {
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-top: 16px;
+    padding: 0 5%;
+    width: 90%;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 6px;
+    border: none;
+    background-color: #EBE6E2;
+    box-shadow: none;
+    outline: none;
+}
+.logo {
+    background-image: url(ico-sysu.png);
+    width: 100px;
+    height: 120px;
+    -webkit-background-size: 100px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    margin-top: 64px;
+}
+#signup button {
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-top: 40px;
+    height: 50px;
+    display: block;
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    background-color: #60b5d2;
+    box-shadow: none;
+    color: #fff;
+    outline: none;
+}
+#signup a {
+    color: #BEBAB1;
+    text-decoration: none;
+}
+.forget-pwd {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.signup-btn {
+    float: right;
+    border: 1px solid #60b5d2;
+    background: transparent;
+    border-radius: 6px;
+    display: inline-block;
+    vertical-align: center;
+    font-size: 16px;
+    padding: 4px 24px;
+    color: #60b5d2;
+}
+.add-info {
+    overflow: hidden;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: bold;
+}
+#signup .add-info a {
+    margin-top: 8px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    vertical-align: center;
+}
