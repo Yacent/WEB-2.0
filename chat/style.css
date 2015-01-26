@@ -460,11 +460,9 @@ form.form-outside {
     font-family: sans-serif;
     font-size: 16px;
     margin-top: 16px;
-    padding: 0 5%;
+    padding: 14px 5%;
     width: 90%;
     display: block;
-    height: 50px;
-    line-height: 50px;
     border-radius: 6px;
     border: none;
     background-color: #EBE6E2;
@@ -496,6 +494,9 @@ form.form-outside {
     color: #fff;
     outline: none;
 }
+#signup button:active {
+    background-color: #3099b2;
+}
 #signup a {
     color: #BEBAB1;
     text-decoration: none;
@@ -516,6 +517,12 @@ form.form-outside {
     font-size: 16px;
     padding: 4px 24px;
     color: #60b5d2;
+    cursor: pointer;
+}
+.signup-btn:active {
+    background: #60b5d2;
+    color: #fff;
+    -webkit-user-select:none;
 }
 .add-info {
     overflow: hidden;
