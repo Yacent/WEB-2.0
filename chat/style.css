@@ -473,13 +473,13 @@ form.form-outside {
 }
 .logo {
     background-image: url(ico-sysu.png);
-    width: 100px;
-    height: 120px;
-    -webkit-background-size: 100px;
-    background-size: 100px;
+    width: 80px;
+    height: 100px;
+    -webkit-background-size: 80px;
+    background-size: 80px;
     background-repeat: no-repeat;
     margin: 0 auto;
-    margin-top: 64px;
+    margin-top: 50px;
 }
 #signup button {
     font-family: sans-serif;
