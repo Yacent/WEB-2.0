@@ -595,19 +595,10 @@ form.form-outside {
     margin-top: -1px;
 }
 .solid-line {
-    background-image:-webkit-linear-gradient(to right, #60b5d2, #ccc, #ccc);
-    background-image:linear-gradient(to right,#60b5d2,#ccc,#ccc);
-    //border-top: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     height: 1px;
     width: 150px;
     margin: 0 auto;
-}
-.solid-line-mid {
-    background-image:-webkit-linear-gradient(to right, #60b5d2, #60b5d2, #ccc);
-    background-image:linear-gradient(to right,#60b5d2, #60b5d2, #ccc);
-}
-.solid-line-final {
-    background-color: #60b5d2;
 }
 #signin .current {
     position: relative;
