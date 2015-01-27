@@ -26,6 +26,16 @@
         
         <input type="text" placeholder="用户名">
         <input type="password" placeholder="密码">
+        <div class="checkbox">
+          <div class="gender-bg"></div>
+          <div class="gender gender-active" id="male">
+              ♂ 男生
+          </div>
+          <div class="gender" id="female">
+              ♀ 女生
+          </div>
+        </div>
+
         <button>下一步</button>
         <!--<a class="forget-pwd" href="#">忘记密码？</a>
         <div class="add-info">
@@ -38,8 +48,12 @@
       <form class="signup-2" action="">
         <!--<div class="logo"></div>-->
         <h3>1.使用教务系统账号密码验证</h3>
-        <input type="text" placeholder="用户名">
-        <input type="password" placeholder="密码">
+        <input type="text" placeholder="学号">
+        <input type="password" placeholder="教务系统密码">
+        <div class="divider">
+          <div class="split-line"></div>
+          <div class="line-label" style="background-color: #F7F6F2"><p>或</p></div>
+        </div>
         <h3>2.使用中大邮箱验证</h3>
         <input type="text" id="netid" placeholder="NetID">
         <span>@</span>
@@ -59,6 +73,11 @@
           <div class="signup-btn">注册</div>
         </div>-->
       </form>
+      </div>
+      <div class="page page3">
+        <div class="success">
+          欢迎来到 LOVE 中大
+        </div>
       </div>
       
     </div>
@@ -84,6 +103,25 @@
           $('.page2').addClass('page-active');
           $('.page1').removeClass('page-active');
           $('.progress-bar li').eq(1).addClass('current');
+        });
+        $('.signup-2 button').click(function(event) {
+          event.preventDefault();
+          $('.page2').addClass('page-out');
+          $('.page3').addClass('page-active');
+          $('.progress-bar li').eq(2).addClass('current');
+        });
+        $('.gender').click(function(event){
+          var idx = $(this).index();
+          console.log(idx);
+          if (idx == 2) {
+            $('.gender-bg').addClass('right-0');
+            $('.gender-active').removeClass('gender-active');
+            $(this).addClass('gender-active');
+          } else {
+            $('.gender-bg').removeClass('right-0');
+            $('.gender-active').removeClass('gender-active');
+            $(this).addClass('gender-active');
+          }
         });
       });
     </script>

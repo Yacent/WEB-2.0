@@ -503,6 +503,9 @@ form.form-outside {
     color: #BEBAB1;
     text-decoration: none;
 }
+#signin h2, #signin h3 {
+    opacity: .7;
+}
 .forget-pwd {
     display: block;
     text-align: center;
@@ -678,6 +681,7 @@ input#netid {
     border-bottom-left-radius: 0; 
 }
 .page {
+    overflow: hidden;
     position: absolute;
     top: 150px;
     width: 0;
@@ -685,7 +689,7 @@ input#netid {
     -o-transition: all .5s;
     transition: all .5s;
 }
-.page2 {
+.page2, .page3 {
     right: -100%;
 }
 .page1 {
@@ -706,7 +710,6 @@ input#netid {
 }
 .page-active {
     width: 100%;
-
 }
 .page1.page-active {
     left: 0;
@@ -714,13 +717,18 @@ input#netid {
     -o-transition: left .5s;
     transition: left .5s;
 }
-.page2.page-active {
+.page2.page-active, .page3.page-active {
     right: 0;
     -webkit-transition: right .5s;
     -o-transition: right .5s;
     transition: right .5s;
 }
-
+.page2.page-out {
+    right: 100%;
+    -webkit-transition: right .5s;
+    -o-transition: right .5s;
+    transition: right .5s;
+}
 .signup-1 {
     width: 95%;
     left: -100%;
@@ -728,4 +736,54 @@ input#netid {
     -webkit-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s;
+}
+.success {
+    width: 95%;
+    margin: 0 auto;
+}
+.checkbox {
+    z-index: 5;
+    position: relative;
+    width: 50%;
+    margin: 20px auto 0 auto;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #EBE6E2;
+}
+
+.gender {
+    z-index: 100;
+    height: 50px;
+    line-height: 50px;
+    width: 50%;
+    float: left;
+    text-align: center;
+    background: transparent;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+.gender-active {
+    color: #fff;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+.gender-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50%;
+    background-color: #60b5d2;
+    z-index: -5;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+.right-0 {
+    left: 50%;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
 }
